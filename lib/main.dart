@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_session/flutter/widget_example.dart';
+import 'package:training_session/flutter/layout_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: true,
-      ),
-      home: const WidgetsExample(),
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
+          useMaterial3: true,
+          fontFamily: "WorkSans"),
+      home: const LayoutExample(),
     );
   }
 }
