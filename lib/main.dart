@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'flutter/multilayout_example.dart';
+import 'package:training_session/flutter/stateful_widget_example.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           useMaterial3: true,
           fontFamily: "WorkSans"),
-      home: const MultilayoutExample(),
+      home: const StatefulWidgetExample(),
     );
   }
 }
