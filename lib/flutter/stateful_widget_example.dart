@@ -8,7 +8,8 @@ class StatefulWidgetExample extends StatefulWidget {
 }
 
 class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
-  String userText = "Stateful Widget Example";
+  String userText =
+      "Stateful Widget Example";
   Color _containerColor = Colors.yellow;
   final nameTextController = TextEditingController();
 
@@ -29,8 +30,7 @@ class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
               ),
               const SizedBox(height: 50),
               Container(
-                width: 200,
-                height: 200,
+                height: 100,
                 color: _containerColor,
                 child: Center(
                   child: Padding(
@@ -52,7 +52,7 @@ class _StatefulWidgetExampleState extends State<StatefulWidgetExample> {
                       nameTextController.clear();
                     });
                   },
-                  child: Text("Button")),
+                  child: const Text("Button")),
             ],
           ),
         ),
