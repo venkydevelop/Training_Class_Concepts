@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_session/flutter/navigation_example.dart';
+import 'package:training_session/flutter/stack_position_alignment.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           useMaterial3: true,
           fontFamily: "WorkSans"),
-      home: const NavigationExample(),
+      home: const StackPositionAlignment(),
     );
   }
 }
