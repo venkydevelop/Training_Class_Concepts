@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:training_session/flutter/stack_position_alignment.dart';
+import 'package:training_session/flutter/custom_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           useMaterial3: true,
           fontFamily: "WorkSans"),
-      home: const StackPositionAlignment(),
+      home: const CustomList(),
     );
   }
 }

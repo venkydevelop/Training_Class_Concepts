@@ -27,9 +27,7 @@ class _VisibleInvisibleState extends State<VisibleInvisible> {
                         color: _isVisible ? Colors.red : Colors.black,
                         fontWeight: FontWeight.w500,
                         fontSize: 18))),
-            SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 setState(() {

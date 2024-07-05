@@ -35,11 +35,16 @@ class DetailPage extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           fontSize: 18)),
                   const SizedBox(height: 20),
-                  Text(userEmail ?? 'No Email',
-                      style: const TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18)),
+                  Image.asset(
+                    userEmail ?? "",
+                    width: 30,
+                    height: 30,
+                  ),
+                  // Text(userEmail ?? 'No Email',
+                  //     style: const TextStyle(
+                  //         color: Colors.black,
+                  //         fontWeight: FontWeight.w500,
+                  //         fontSize: 18)),
                   const SizedBox(height: 20),
                   Text(courseName ?? "No Course",
                       style: const TextStyle(
