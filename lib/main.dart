@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:training_session/flutter/custom_list.dart';
+import 'package:get/get.dart';
+
+import 'flutter/custom_grid.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,14 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           useMaterial3: true,
           fontFamily: "WorkSans"),
-      home: const CustomList(),
+      home: const CustomGrid(),
     );
   }
 }

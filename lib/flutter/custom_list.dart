@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:training_session/components/custom_component.dart';
 import 'package:training_session/flutter/detail_page.dart';
+import 'package:training_session/model/data_model.dart';
 
 class CustomList extends StatefulWidget {
   const CustomList({super.key});
@@ -10,24 +12,32 @@ class CustomList extends StatefulWidget {
 }
 
 class _CustomListState extends State<CustomList> {
-  final List<dynamic> studentDetails = [
-    {
-      "name": "Anusha",
-      "imagePath": "assets/images/test.png",
-      "Course": "Flutter"
-    },
-    {"name": "Malli", "imagePath": "assets/images/test.png", "Course": "iOS"},
-    {
-      "name": "Preethi",
-      "imagePath": "assets/images/test.png",
-      "Course": "Android"
-    },
-    {
-      "name": "Bhargavi",
-      "imagePath": "assets/images/test.png",
-      "Course": "Web"
-    },
-    {"name": "Nithin", "imagePath": "assets/images/test.png", "Course": "Java"},
+  final List<DataModel> studentDetails = [
+    DataModel(
+      name: "Anusha",
+      imagePath: "assets/images/test.png",
+      course: "Flutter",
+    ),
+    DataModel(
+      name: "Malli",
+      imagePath: "assets/images/test.png",
+      course: "iOS",
+    ),
+    DataModel(
+      name: "Preethi",
+      imagePath: "assets/images/test.png",
+      course: "Android",
+    ),
+    DataModel(
+      name: "Bhargavi",
+      imagePath: "assets/images/test.png",
+      course: "Web",
+    ),
+    DataModel(
+      name: "Nithin",
+      imagePath: "assets/images/test.png",
+      course: "Java",
+    ),
   ];
 
   @override
@@ -39,7 +49,7 @@ class _CustomListState extends State<CustomList> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
+          const Center(
             child: Text("Student Course Details",
                 style: TextStyle(
                     fontSize: 18,
@@ -52,20 +62,21 @@ class _CustomListState extends State<CustomList> {
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => DetailPage(
-                                    userName: studentDetails[index]["name"],
-                                    userEmail: studentDetails[index]
-                                        ["imagePath"],
-                                    courseName: studentDetails[index]["Course"],
-                                  )));
+                      Get.to(() => DetailPage(
+                            userName: studentDetails[index].name ?? '',
+                            userEmail: studentDetails[index].imagePath ?? '',
+                            courseName: studentDetails[index].course ?? '',
+                          ));
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => DetailPage(
+                      //               userName: studentDetails[index].name ?? '',
+                      //               userEmail: studentDetails[index].imagePath ?? '',
+                      //               courseName: studentDetails[index].course ?? '',
+                      //             )));
                     },
-                    child: CustomComponent(
-                        name: studentDetails[index]["name"],
-                        imageName: studentDetails[index]["imagePath"],
-                        course: studentDetails[index]["Course"]),
+                    child: CustomComponent(data: studentDetails[index]),
                   );
                 }),
           )

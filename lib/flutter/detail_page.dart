@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:training_session/model/data_model.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage(
-      {super.key, required this.userName, this.userEmail, this.courseName});
+      {super.key,
+      required this.userName,
+      this.userEmail,
+      this.courseName,
+      this.data});
 
   final String userName;
   final String? userEmail;
   final String? courseName;
+
+  final DataModel? data;
 
   @override
   Widget build(BuildContext context) {
