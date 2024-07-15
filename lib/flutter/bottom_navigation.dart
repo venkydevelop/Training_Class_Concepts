@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:training_session/flutter/drawer_example.dart';
 import 'package:training_session/flutter/simple_grid.dart';
-import 'package:training_session/flutter/simple_list.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -23,7 +23,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   void initState() {
     super.initState();
     pages = [
-      const SimpleList(),
+      const HomePage(),
       const SimpleGrid(),
       const Text("Trending"),
       const Text("Profile")
