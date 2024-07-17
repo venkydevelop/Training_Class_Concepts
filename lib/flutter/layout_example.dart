@@ -9,7 +9,7 @@ class LayoutExample extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         top: true,
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Column(
@@ -23,33 +23,33 @@ class LayoutExample extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                     color: Colors.black),
               ),
-              SizedBox(height: 30),
-              TextField(
+              const SizedBox(height: 30),
+              const TextField(
                 decoration: InputDecoration(hintText: "Email"),
               ),
-              SizedBox(height: 30),
-              TextField(
+              const SizedBox(height: 30),
+              const TextField(
                 decoration: InputDecoration(hintText: "Password"),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   ElevatedButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Login",
                         style: TextStyle(
                             color: Colors.green,
                             fontWeight: FontWeight.w600,
                             fontSize: 22),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
                   ElevatedButton(
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         "Google",
                         style: TextStyle(
                             color: Colors.green,

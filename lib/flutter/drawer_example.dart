@@ -80,8 +80,8 @@ class DrawerExample extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
+              leading: const Icon(Icons.settings),
+              title: const Text(
                 "Settings",
                 style: TextStyle(
                     fontWeight: FontWeight.w500,
@@ -90,12 +90,12 @@ class DrawerExample extends StatelessWidget {
               ),
               onTap: () {
                 Get.back();
-                Get.to(() => SettingPage());
+                Get.to(() => const SettingPage());
               },
             ),
             ListTile(
-              leading: Icon(Icons.logout),
-              title: Text(
+              leading: const Icon(Icons.logout),
+              title: const Text(
                 "Logout",
                 style: TextStyle(
                     fontWeight: FontWeight.w500,
