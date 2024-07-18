@@ -11,6 +11,10 @@ class CustomTextField extends StatelessWidget {
         width: double.infinity,
         height: 45,
         child: TextField(
+          cursorColor: Colors.blue,
+          textInputAction: TextInputAction.next,
+          maxLength: 10,
+          keyboardType: TextInputType.text,
           decoration: InputDecoration(
               hintText: hintLabel,
               // fillColor: Colors.red,
