@@ -81,3 +81,21 @@ Map<String, dynamic> _$$ListDataModelImplToJson(_$ListDataModelImpl instance) =>
       'last_name': instance.lastName,
       'avatar': instance.avatar,
     };
+
+_$PostDataResponseImpl _$$PostDataResponseImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PostDataResponseImpl(
+      userId: (json['userId'] as num?)?.toInt(),
+      id: (json['id'] as num?)?.toInt(),
+      title: json['title'] as String?,
+      body: json['body'] as String?,
+    );
+
+Map<String, dynamic> _$$PostDataResponseImplToJson(
+        _$PostDataResponseImpl instance) =>
+    <String, dynamic>{
+      'userId': instance.userId,
+      'id': instance.id,
+      'title': instance.title,
+      'body': instance.body,
+    };

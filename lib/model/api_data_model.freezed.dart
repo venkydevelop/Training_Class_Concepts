@@ -881,3 +881,192 @@ abstract class _ListDataModel implements ListDataModel {
   _$$ListDataModelImplCopyWith<_$ListDataModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+PostDataResponse _$PostDataResponseFromJson(Map<String, dynamic> json) {
+  return _PostDataResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PostDataResponse {
+  int? get userId => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PostDataResponseCopyWith<PostDataResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PostDataResponseCopyWith<$Res> {
+  factory $PostDataResponseCopyWith(
+          PostDataResponse value, $Res Function(PostDataResponse) then) =
+      _$PostDataResponseCopyWithImpl<$Res, PostDataResponse>;
+  @useResult
+  $Res call({int? userId, int? id, String? title, String? body});
+}
+
+/// @nodoc
+class _$PostDataResponseCopyWithImpl<$Res, $Val extends PostDataResponse>
+    implements $PostDataResponseCopyWith<$Res> {
+  _$PostDataResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? body = freezed,
+  }) {
+    return _then(_value.copyWith(
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: freezed == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PostDataResponseImplCopyWith<$Res>
+    implements $PostDataResponseCopyWith<$Res> {
+  factory _$$PostDataResponseImplCopyWith(_$PostDataResponseImpl value,
+          $Res Function(_$PostDataResponseImpl) then) =
+      __$$PostDataResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? userId, int? id, String? title, String? body});
+}
+
+/// @nodoc
+class __$$PostDataResponseImplCopyWithImpl<$Res>
+    extends _$PostDataResponseCopyWithImpl<$Res, _$PostDataResponseImpl>
+    implements _$$PostDataResponseImplCopyWith<$Res> {
+  __$$PostDataResponseImplCopyWithImpl(_$PostDataResponseImpl _value,
+      $Res Function(_$PostDataResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? body = freezed,
+  }) {
+    return _then(_$PostDataResponseImpl(
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: freezed == body
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PostDataResponseImpl implements _PostDataResponse {
+  _$PostDataResponseImpl({this.userId, this.id, this.title, this.body});
+
+  factory _$PostDataResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostDataResponseImplFromJson(json);
+
+  @override
+  final int? userId;
+  @override
+  final int? id;
+  @override
+  final String? title;
+  @override
+  final String? body;
+
+  @override
+  String toString() {
+    return 'PostDataResponse(userId: $userId, id: $id, title: $title, body: $body)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PostDataResponseImpl &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.body, body) || other.body == body));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, userId, id, title, body);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PostDataResponseImplCopyWith<_$PostDataResponseImpl> get copyWith =>
+      __$$PostDataResponseImplCopyWithImpl<_$PostDataResponseImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PostDataResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PostDataResponse implements PostDataResponse {
+  factory _PostDataResponse(
+      {final int? userId,
+      final int? id,
+      final String? title,
+      final String? body}) = _$PostDataResponseImpl;
+
+  factory _PostDataResponse.fromJson(Map<String, dynamic> json) =
+      _$PostDataResponseImpl.fromJson;
+
+  @override
+  int? get userId;
+  @override
+  int? get id;
+  @override
+  String? get title;
+  @override
+  String? get body;
+  @override
+  @JsonKey(ignore: true)
+  _$$PostDataResponseImplCopyWith<_$PostDataResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

@@ -53,3 +53,16 @@ class ListDataModel with _$ListDataModel {
   factory ListDataModel.fromJson(Map<String, Object?> json) =>
       _$ListDataModelFromJson(json);
 }
+
+@Freezed()
+class PostDataResponse with _$PostDataResponse {
+  factory PostDataResponse({
+    int? userId,
+    int? id,
+    String? title,
+    String? body,
+  }) = _PostDataResponse;
+
+  factory PostDataResponse.fromJson(Map<String, Object?> json) =>
+      _$PostDataResponseFromJson(json);
+}
