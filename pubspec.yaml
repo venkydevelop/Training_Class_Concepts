@@ -46,6 +46,8 @@ dependencies:
   contacts_service: 0.6.3
   permission_handler: 11.3.1
   http: 1.2.2
+  geolocator: ^11.1.0
+  google_maps_flutter: ^2.2.8
 
 
 dev_dependencies:

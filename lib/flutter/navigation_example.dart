@@ -12,7 +12,7 @@ class _NavigationExampleState extends State<NavigationExample> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   String selectedCourse = "Select Course";
-  bool isDropSownVisible = false;
+  bool isDropDownVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class _NavigationExampleState extends State<NavigationExample> {
             InkWell(
               onTap: () {
                 setState(() {
-                  isDropSownVisible = !isDropSownVisible;
+                  isDropDownVisible = !isDropDownVisible;
                 });
               },
               child: InputDecorator(
@@ -73,7 +73,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                         fontSize: 18,
                         fontWeight: FontWeight.w500,
                         color: Colors.black),
-                    suffixIcon: isDropSownVisible
+                    suffixIcon: isDropDownVisible
                         ? const Icon(
                             Icons.arrow_drop_up_outlined,
                             size: 22,
@@ -89,7 +89,7 @@ class _NavigationExampleState extends State<NavigationExample> {
             ),
             const SizedBox(height: 20),
             Visibility(
-              visible: isDropSownVisible,
+              visible: isDropDownVisible,
               child: Container(
                 height: 50,
                 width: double.infinity,
@@ -102,7 +102,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                   onTap: () {
                     setState(() {
                       selectedCourse = "Flutter";
-                      isDropSownVisible = false;
+                      isDropDownVisible = false;
                     });
                   },
                   child: const Text('Flutter'),

@@ -1,4 +1,7 @@
 void main() {
+
+ // List : ordered items in based on index, it will allow the duplicates
+
   // Creating a list of numbers
   List<int> numbers = [1, 2, 3, 4, 5];
 
@@ -11,10 +14,18 @@ void main() {
   print('Last element: ${numbers.last}');
   print('Reversed list: ${numbers.reversed.toList()}');
 
-  // Creating a list with a single element
-  List<int> singleElementList = [10];
-  print('Single element: ${singleElementList.single}');
+  for (int i = 0; i < numbers.length; i++) {
+  print(i);
+}
 
+  List<String> names = [];
+
+  for (var name in names) {
+    print(name);
+  }
+  names.forEach((element) {
+    print(element);
+  });
   // List methods
   numbers.add(6);
   print('After adding 6: $numbers');
