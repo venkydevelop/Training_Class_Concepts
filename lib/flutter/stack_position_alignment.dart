@@ -7,7 +7,7 @@ class StackPositionAlignment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Stack Example"),
+        title: const Text("Stack Example"),
       ),
       body: Stack(
         children: [
@@ -19,7 +19,7 @@ class StackPositionAlignment extends StatelessWidget {
               child: Container(
                 color: Colors.red,
               )),
-          Center(
+          const Center(
             child: Column(
               children: [
                 Center(
@@ -44,7 +44,7 @@ class StackPositionAlignment extends StatelessWidget {
                   style:
                       ElevatedButton.styleFrom(backgroundColor: Colors.white),
                   onPressed: () {},
-                  child: Text("Login"),
+                  child: const Text("Login"),
                 ),
               ),
             ),
