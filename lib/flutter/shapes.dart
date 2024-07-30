@@ -53,13 +53,13 @@ class ShapesExample extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const CustomTextField(
+                  const CustomText(
                     hintLabel: 'Email',
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  const CustomTextField(
+                  const CustomText(
                     hintLabel: 'Password',
                   ),
                   Row(

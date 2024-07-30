@@ -23,9 +23,9 @@ class MultilayoutExample extends StatelessWidget {
                         color: Colors.black)),
               ),
               SizedBox(height: 30),
-              CustomTextField(hintLabel: "Email"),
+              CustomText(hintLabel: "Email"),
               SizedBox(height: 30),
-              CustomTextField(hintLabel: "Password"),
+              CustomText(hintLabel: "Password"),
               SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,

@@ -5,7 +5,7 @@ class AuthValidator {
     final RegExp emailValid = RegExp(r'^[^@]+@[^@]+\.[^@]+');
     if (request.email.isEmpty) {
       return "Please enter email id";
-    } else if (emailValid.hasMatch(request.email)) {
+    } else if (!emailValid.hasMatch(request.email)) {
       return "Please enter Valid Email Id";
     } else if (request.password.isEmpty) {
       return "Please enter word";
@@ -19,7 +19,7 @@ class AuthValidator {
       return "please enter name";
     } else if (request.email.isEmpty) {
       return "Please enter email id";
-    } else if (emailValid.hasMatch(request.email)) {
+    } else if (!emailValid.hasMatch(request.email)) {
       return "Please enter Valid Email Id";
     } else if (request.password.isEmpty) {
       return "Please enter word";

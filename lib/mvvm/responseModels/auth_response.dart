@@ -27,3 +27,15 @@ class SignUpModel with _$SignUpModel {
   factory SignUpModel.fromJson(Map<String, dynamic> json) =>
       _$SignUpModelFromJson(json);
 }
+
+@Freezed()
+class UsersResponse with _$UsersResponse {
+  const factory UsersResponse({
+    int? status,
+    String? message,
+    List<SignUpModel>? data,
+  }) = _UsersResponse;
+
+  factory UsersResponse.fromJson(Map<String, dynamic> json) =>
+      _$UsersResponseFromJson(json);
+}

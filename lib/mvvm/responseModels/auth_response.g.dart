@@ -38,3 +38,19 @@ Map<String, dynamic> _$$SignUpModelImplToJson(_$SignUpModelImpl instance) =>
       'name': instance.name,
       'email': instance.email,
     };
+
+_$UsersResponseImpl _$$UsersResponseImplFromJson(Map<String, dynamic> json) =>
+    _$UsersResponseImpl(
+      status: (json['status'] as num?)?.toInt(),
+      message: json['message'] as String?,
+      data: (json['data'] as List<dynamic>?)
+          ?.map((e) => SignUpModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$UsersResponseImplToJson(_$UsersResponseImpl instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
+      'data': instance.data,
+    };

@@ -402,3 +402,184 @@ abstract class _SignUpModel implements SignUpModel {
   _$$SignUpModelImplCopyWith<_$SignUpModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+UsersResponse _$UsersResponseFromJson(Map<String, dynamic> json) {
+  return _UsersResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$UsersResponse {
+  int? get status => throw _privateConstructorUsedError;
+  String? get message => throw _privateConstructorUsedError;
+  List<SignUpModel>? get data => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UsersResponseCopyWith<UsersResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UsersResponseCopyWith<$Res> {
+  factory $UsersResponseCopyWith(
+          UsersResponse value, $Res Function(UsersResponse) then) =
+      _$UsersResponseCopyWithImpl<$Res, UsersResponse>;
+  @useResult
+  $Res call({int? status, String? message, List<SignUpModel>? data});
+}
+
+/// @nodoc
+class _$UsersResponseCopyWithImpl<$Res, $Val extends UsersResponse>
+    implements $UsersResponseCopyWith<$Res> {
+  _$UsersResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? message = freezed,
+    Object? data = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<SignUpModel>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$UsersResponseImplCopyWith<$Res>
+    implements $UsersResponseCopyWith<$Res> {
+  factory _$$UsersResponseImplCopyWith(
+          _$UsersResponseImpl value, $Res Function(_$UsersResponseImpl) then) =
+      __$$UsersResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int? status, String? message, List<SignUpModel>? data});
+}
+
+/// @nodoc
+class __$$UsersResponseImplCopyWithImpl<$Res>
+    extends _$UsersResponseCopyWithImpl<$Res, _$UsersResponseImpl>
+    implements _$$UsersResponseImplCopyWith<$Res> {
+  __$$UsersResponseImplCopyWithImpl(
+      _$UsersResponseImpl _value, $Res Function(_$UsersResponseImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? message = freezed,
+    Object? data = freezed,
+  }) {
+    return _then(_$UsersResponseImpl(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as int?,
+      message: freezed == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: freezed == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<SignUpModel>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$UsersResponseImpl implements _UsersResponse {
+  const _$UsersResponseImpl(
+      {this.status, this.message, final List<SignUpModel>? data})
+      : _data = data;
+
+  factory _$UsersResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UsersResponseImplFromJson(json);
+
+  @override
+  final int? status;
+  @override
+  final String? message;
+  final List<SignUpModel>? _data;
+  @override
+  List<SignUpModel>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'UsersResponse(status: $status, message: $message, data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UsersResponseImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.message, message) || other.message == message) &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, status, message, const DeepCollectionEquality().hash(_data));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UsersResponseImplCopyWith<_$UsersResponseImpl> get copyWith =>
+      __$$UsersResponseImplCopyWithImpl<_$UsersResponseImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$UsersResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _UsersResponse implements UsersResponse {
+  const factory _UsersResponse(
+      {final int? status,
+      final String? message,
+      final List<SignUpModel>? data}) = _$UsersResponseImpl;
+
+  factory _UsersResponse.fromJson(Map<String, dynamic> json) =
+      _$UsersResponseImpl.fromJson;
+
+  @override
+  int? get status;
+  @override
+  String? get message;
+  @override
+  List<SignUpModel>? get data;
+  @override
+  @JsonKey(ignore: true)
+  _$$UsersResponseImplCopyWith<_$UsersResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
