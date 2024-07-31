@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:training_session/mvvm/views/user_page.dart';
 
-import '../../flutter/drawer_example.dart';
+import 'model_profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -23,7 +23,7 @@ class _MainPageState extends State<MainPage> {
     super.initState();
 
     _selectedPageIndex = 0;
-    _pages = [const UserPage(), const ProfilePage()];
+    _pages = [const UserPage(), const ModelProfilePage()];
 
     _pageController = PageController(initialPage: _selectedPageIndex);
   }

@@ -14,6 +14,7 @@ class AuthViewModel extends GetxController {
   final signInObserver = ApiResult<SignUpResponse>.init().obs;
   final signUpObserver = ApiResult<SignUpResponse>.init().obs;
   final userObserver = ApiResult<UsersResponse>.init().obs;
+  final fetchUserObserver = ApiResult<SignUpResponse>.init().obs;
   final apiProvider = Get.put(ApiProvider());
   final preferenceManager = Get.put(PreferenceManager());
 
@@ -103,16 +104,42 @@ class AuthViewModel extends GetxController {
     }
   }
 
+  void fetchUserDetails() async {
+    try {
+      fetchUserObserver.value = ApiResult.loading();
+      final response = await apiProvider.get(EndPoints.fetchUserDetails);
+      final body = response.body;
+      print(body);
+      if (response.isOk && body != null) {
+        final responseData = SignUpResponse.fromJson(body);
+        if (responseData.status == 1) {
+          fetchUserObserver.value = ApiResult.success(responseData);
+        } else {
+          fetchUserObserver.value = ApiResult.error(responseData.message ?? "");
+          Get.showSnackBar(
+              title: 'Failed', message: responseData.message ?? "");
+        }
+      } else {
+        fetchUserObserver.value = ApiResult.error(
+            "something went wrong. ${response.statusCode ?? 0}");
+        Get.showSnackBar(
+            title: 'Failed', message: "${response.statusCode ?? 0}");
+      }
+    } catch (e) {
+      fetchUserObserver.value = ApiResult.error(e.toString());
+    }
+  }
+
   void getMain() async {
     final token = await preferenceManager.getValue(preferenceManager.token);
     if (token != null && token.isNotEmpty) {
-      Get.offAll(() => MainPage());
+      Get.offAll(() => const MainPage());
     } else {
       Get.offAll(() => const SignInPage());
     }
   }
 
-  void logOut() async {
+  Future<void> logOut() async {
     await preferenceManager.removeToken();
     Get.offAll(() => const SignInPage());
   }

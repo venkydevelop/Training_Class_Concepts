@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/request/request.dart';
 
+import '../extension/preference_manager.dart';
+
 class ApiProvider<T> extends GetConnect {
   String apiKey = '123456';
   String apiLiveBaseUrl =
@@ -13,10 +15,10 @@ class ApiProvider<T> extends GetConnect {
     httpClient.defaultContentType = 'application/json';
     httpClient.timeout = const Duration(seconds: 25);
     httpClient.addRequestModifier<T>((request) async {
-      // final preferenceManager = Get.find<PreferenceManager>();
-      // token = await preferenceManager.getValue(preferenceManager.token) ?? "";
+      final preferenceManager = Get.find<PreferenceManager>();
+      token = await preferenceManager.getValue(preferenceManager.token) ?? "";
       final modifiedRequest = request as Request<T>;
-      // modifiedRequest.headers['Authorization'] = token;
+      modifiedRequest.headers['Authorization'] = token;
       modifiedRequest.headers['ApiKey'] = apiKey;
       return modifiedRequest;
     });
