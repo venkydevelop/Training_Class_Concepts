@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:training_session/mvvm/views/splash_page.dart';
+import 'package:training_session/firebaseFiles/firebase_login.dart';
 
-import 'firebase_options.dart';
+import 'firebaseFiles/service/firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           useMaterial3: true,
           fontFamily: "WorkSans"),
-      home: const SplashPage(),
+      home: const FirebaseLogin(),
     );
   }
 }
