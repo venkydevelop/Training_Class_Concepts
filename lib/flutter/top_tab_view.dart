@@ -8,7 +8,7 @@ class TopTabView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("TabViews"),
+        title: const Text("TabViews"),
       ),
       body: DefaultTabController(
         length: 2,
@@ -27,7 +27,7 @@ class TopTabView extends StatelessWidget {
                     color: Colors.white,
                     border: Border.all(),
                     borderRadius: BorderRadius.circular(12)),
-                tabs: [
+                tabs: const [
                   Tab(
                       icon: Icon(
                         Icons.home,
@@ -41,7 +41,7 @@ class TopTabView extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
+            const Expanded(
                 child: TabBarView(
                     children: [Center(child: Text("Home Page")), SimpleList()]))
           ],

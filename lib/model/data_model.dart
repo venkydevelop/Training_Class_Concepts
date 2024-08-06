@@ -11,3 +11,12 @@ class DataModel with _$DataModel {
   factory DataModel.fromJson(Map<String, Object?> json) =>
       _$DataModelFromJson(json);
 }
+
+@Freezed()
+class UserDataModel with _$UserDataModel {
+  factory UserDataModel({String? uid, String? name, String? email}) =
+      _UserDataModel;
+
+  factory UserDataModel.fromJson(Map<String, Object?> json) =>
+      _$UserDataModelFromJson(json);
+}

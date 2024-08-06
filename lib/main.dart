@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:training_session/firebaseFiles/firebase_login.dart';
+import 'package:training_session/firebaseFiles/cloud_operation_page.dart';
 
 import 'firebaseFiles/service/firebase_options.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           useMaterial3: true,
           fontFamily: "WorkSans"),
-      home: const FirebaseLogin(),
+      home: const CloudOperationPage(),
     );
   }
 }

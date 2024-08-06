@@ -19,3 +19,17 @@ Map<String, dynamic> _$$DataModelImplToJson(_$DataModelImpl instance) =>
       'imagePath': instance.imagePath,
       'course': instance.course,
     };
+
+_$UserDataModelImpl _$$UserDataModelImplFromJson(Map<String, dynamic> json) =>
+    _$UserDataModelImpl(
+      uid: json['uid'] as String?,
+      name: json['name'] as String?,
+      email: json['email'] as String?,
+    );
+
+Map<String, dynamic> _$$UserDataModelImplToJson(_$UserDataModelImpl instance) =>
+    <String, dynamic>{
+      'uid': instance.uid,
+      'name': instance.name,
+      'email': instance.email,
+    };

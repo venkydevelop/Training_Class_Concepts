@@ -10,7 +10,7 @@ class DrawerExample extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Drawer Example"),
+        title: const Text("Drawer Example"),
       ),
       drawer: Drawer(
         backgroundColor: Colors.green,
@@ -62,7 +62,7 @@ class DrawerExample extends StatelessWidget {
               ),
               onTap: () {
                 Get.back();
-                Get.to(() => HomePage());
+                Get.to(() => const HomePage());
               },
             ),
             ListTile(
@@ -166,7 +166,7 @@ class ProfilePage extends StatelessWidget {
       body: Container(
         width: double.infinity,
         color: Colors.blue,
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
