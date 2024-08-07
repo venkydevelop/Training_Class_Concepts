@@ -23,6 +23,7 @@ class _ProductPageState extends State<ProductPage> {
     _loadProducts();
   }
 
+  @override
   void dispose() {
     nameController.dispose();
     descriptionController.dispose();

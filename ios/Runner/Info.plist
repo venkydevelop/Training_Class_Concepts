@@ -46,6 +46,12 @@
 	<string>This app requires contacts access to function properly.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to location when open.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>I need to access photos for this app.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>I need to access camera for this  app.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>I need to access microphones for this app.</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:training_session/firebaseFiles/cloud_operation_page.dart';
+import 'package:training_session/firebaseFiles/upload_image_page.dart';
 
 import 'firebaseFiles/service/firebase_options.dart';
 
@@ -10,6 +10,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  // await FireBaseNotification().initNotifications();
   runApp(const MyApp());
 }
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           useMaterial3: true,
           fontFamily: "WorkSans"),
-      home: const CloudOperationPage(),
+      home: const UploadImagePage(),
     );
   }
 }
