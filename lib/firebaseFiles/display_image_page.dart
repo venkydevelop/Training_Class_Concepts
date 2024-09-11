@@ -40,11 +40,11 @@ class _DisplayImagePageState extends State<DisplayImagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Image List"),
+        title: const Text("Image List"),
       ),
       body: _isLoading
-          ? Padding(
-              padding: const EdgeInsets.all(8.0),
+          ? const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Center(child: CircularProgressIndicator()),
             )
           : ListView.builder(

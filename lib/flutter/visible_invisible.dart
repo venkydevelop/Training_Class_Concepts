@@ -14,7 +14,7 @@ class _VisibleInvisibleState extends State<VisibleInvisible> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Visiblity Example"),
+        title: const Text("Visibility Example"),
       ),
       body: Center(
         child: Column(

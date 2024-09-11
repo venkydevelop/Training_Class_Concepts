@@ -64,17 +64,18 @@ class _SignInApiState extends State<SignInApi> {
                             : const Icon(Icons.visibility_off),
                       ))),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Center(
               child: ElevatedButton(
                   onPressed: () {
                     signIn();
                   },
-                  child: Text("Login")),
+                  child: const Text("Login")),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             if (isLoading)
-              Center(child: CircularProgressIndicator(color: Colors.lightBlue))
+              const Center(
+                  child: CircularProgressIndicator(color: Colors.lightBlue))
           ],
         ),
       ),
@@ -82,10 +83,10 @@ class _SignInApiState extends State<SignInApi> {
   }
 
   void signIn() async {
+    const uri = "https://reqres.in/api/login";
     setState(() {
       isLoading = true;
     });
-    const uri = "https://reqres.in/api/login";
     try {
       final response = await http.post(Uri.parse(uri),
           headers: {"Content-Type": "application/json"},
@@ -105,6 +106,9 @@ class _SignInApiState extends State<SignInApi> {
       }
     } catch (e) {
       print(e);
+      setState(() {
+        isLoading = false;
+      });
     }
   }
 }

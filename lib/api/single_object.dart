@@ -17,16 +17,16 @@ class _SingleObjectState extends State<SingleObject> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      singleObject();
-    });
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   singleObject();
+    // });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Single Object Data"),
+        title: const Text("Single Object Data"),
       ),
       body: Center(
         child: Column(
@@ -34,18 +34,19 @@ class _SingleObjectState extends State<SingleObject> {
           children: [
             Text(
               singleObjectData?.id ?? "",
-              style: TextStyle(
+              style: const TextStyle(
                   fontSize: 22,
                   fontWeight: FontWeight.w600,
                   color: Colors.black),
             ),
             Text(singleObjectData?.name ?? ""),
             Text("Price: ${singleObjectData?.data?.price ?? 0}"),
-            // ElevatedButton(
-            //     onPressed: () {
-            //       singleObject();
-            //     },
-            //     child: Text("Load Data"))
+            const SizedBox(height: 20),
+            ElevatedButton(
+                onPressed: () async {
+                  await singleObject();
+                },
+                child: const Text("Load Data"))
           ],
         ),
       ),

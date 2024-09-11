@@ -1,6 +1,5 @@
 void main() {
-
- // List : ordered items in based on index, it will allow the duplicates
+  // List : ordered items in based on index, it will allow the duplicates based on index value
 
   // Creating a list of numbers
   List<int> numbers = [1, 2, 3, 4, 5];
@@ -15,8 +14,8 @@ void main() {
   print('Reversed list: ${numbers.reversed.toList()}');
 
   for (int i = 0; i < numbers.length; i++) {
-  print(i);
-}
+    print(i);
+  }
 
   List<String> names = [];
 

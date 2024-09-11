@@ -171,10 +171,10 @@ class _FirebaseLoginState extends State<FirebaseLogin> {
     setState(() {
       _googleSigning = true;
     });
-    final GoogleSignIn _googleSignIn = GoogleSignIn();
+    final GoogleSignIn googleSignIn = GoogleSignIn();
     try {
       final GoogleSignInAccount? googleSignInAccount =
-          await _googleSignIn.signIn();
+          await googleSignIn.signIn();
       setState(() {
         _googleSigning = false;
       });

@@ -6,7 +6,8 @@ void main() {
   print(rollNum);
 
   //final is initialized at runtime.
-  final String studentName = "Vinay";
+  final String studentName;
+  studentName = "venky";
   print(studentName);
 
   // const is initialized at compile time.

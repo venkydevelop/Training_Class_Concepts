@@ -24,7 +24,7 @@ class _ObjectListState extends State<ObjectList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Objects Contains List"),
+        title: const Text("Objects Contains List"),
       ),
       body: ListView.builder(
           itemCount: userData?.data?.length,
@@ -39,7 +39,7 @@ class _ObjectListState extends State<ObjectList> {
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Email Id: ${userData?.data?[index].firstName ?? ''}"),
+                    Text("Email Id: ${userData?.data?[index].email ?? ''}"),
                   ],
                 ),
               ),
@@ -56,7 +56,6 @@ class _ObjectListState extends State<ObjectList> {
         final jsonData = jsonDecode(response.body);
         print(jsonData);
         final data = ObjectListModel.fromJson(jsonData);
-        print(data);
         setState(() {
           userData = data;
           print(userData);

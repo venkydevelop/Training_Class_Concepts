@@ -64,9 +64,9 @@ class ShapesExample extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      ElevatedButton(onPressed: () {}, child: Text("Login")),
-                      ElevatedButton(onPressed: () {}, child: Text("Login")),
-                      ElevatedButton(onPressed: () {}, child: Text("Login")),
+                      ElevatedButton(onPressed: () {}, child: const Text("Login")),
+                      ElevatedButton(onPressed: () {}, child: const Text("Login")),
+                      ElevatedButton(onPressed: () {}, child: const Text("Login")),
                     ],
                   ),
                 ],

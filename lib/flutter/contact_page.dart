@@ -43,7 +43,7 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contacts"),
+        title: const Text("Contacts"),
       ),
       body: contacts.isEmpty
           ? const Center(child: CircularProgressIndicator())
@@ -81,13 +81,13 @@ class _ContactPageState extends State<ContactPage> {
                           radius: 30,
                           child: Text(
                             contact?.initials() ?? '',
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black),
                           ),
                         ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Text(
@@ -97,7 +97,7 @@ class _ContactPageState extends State<ContactPage> {
                         fontWeight: FontWeight.w500,
                         color: Colors.black),
                   ),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   Text(
                     contact?.phones?.isNotEmpty ?? false
                         ? contact?.phones?.first.value ?? ''

@@ -18,7 +18,7 @@ class _NavigationExampleState extends State<NavigationExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Navigation Example"),
+        title: const Text("Navigation Example"),
         backgroundColor: Colors.green,
       ),
       body: Padding(
@@ -26,14 +26,14 @@ class _NavigationExampleState extends State<NavigationExample> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Center(
+            const Center(
               child: Text("Navigation Data",
                   style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
                       fontSize: 22)),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             TextField(
               controller: nameController,
               decoration: const InputDecoration(
@@ -54,6 +54,46 @@ class _NavigationExampleState extends State<NavigationExample> {
                       fontWeight: FontWeight.w500,
                       color: Colors.black),
                   border: OutlineInputBorder()),
+            ),
+            const SizedBox(height: 20),
+            DropdownButton<String>(
+              value: selectedCourse,
+              icon: Icon(isDropDownVisible
+                  ? Icons.arrow_upward
+                  : Icons.arrow_downward),
+              iconSize: 24,
+              elevation: 16,
+              style: TextStyle(color: Colors.deepPurple),
+              underline: Container(
+                height: 2,
+                color: Colors.deepPurpleAccent,
+              ),
+              onTap: () {
+                setState(() {
+                  // Toggle the dropdown open/close state
+                  isDropDownVisible = !isDropDownVisible;
+                });
+              },
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedCourse = newValue ?? "";
+                  isDropDownVisible = false;
+                });
+              },
+              items: [
+                DropdownMenuItem<String>(
+                  value: 'Flutter', // Placeholder
+                  child: Text('Flutter'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'Math', // First item
+                  child: Text('Math'),
+                ),
+                DropdownMenuItem<String>(
+                  value: 'Science', // Second item
+                  child: Text('Science'),
+                ),
+              ],
             ),
             const SizedBox(height: 20),
             InkWell(
@@ -122,7 +162,7 @@ class _NavigationExampleState extends State<NavigationExample> {
                                     courseName: selectedCourse,
                                   )));
                     },
-                    child: Text("Passing Data"))),
+                    child: const Text("Passing Data"))),
           ],
         ),
       ),

@@ -14,6 +14,7 @@ class ListObjects extends StatefulWidget {
 
 class _ListObjectsState extends State<ListObjects> {
   List<PostDataResponse>? postData;
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -23,22 +24,29 @@ class _ListObjectsState extends State<ListObjects> {
 
   void postDataMethod() async {
     const uri = "https://jsonplaceholder.typicode.com/posts";
+    setState(() {
+      isLoading = true;
+    });
     try {
       final response = await http.get(Uri.parse(uri));
       if (response.statusCode == 200) {
         final jsonData = jsonDecode(response.body);
-        print(jsonData);
+        print("jsonData:$jsonData");
         setState(() {
           postData = (jsonData as List)
               .map((data) => PostDataResponse.fromJson(data))
               .toList();
+          isLoading = false;
         });
-        print(postData);
+        print("postData: $postData");
       } else {
         throw Exception("Unable load data");
       }
     } catch (e) {
       print(e);
+      setState(() {
+        isLoading = false;
+      });
     }
   }
 
@@ -48,44 +56,46 @@ class _ListObjectsState extends State<ListObjects> {
       appBar: AppBar(
         title: const Text("List of Objects"),
       ),
-      body: ListView.builder(
-          itemCount: postData?.length,
-          itemBuilder: (BuildContext context, index) {
-            return Card(
-              color: Colors.yellow,
-              child: ListTile(
-                title: Text(
-                  "${postData?[index].title}",
-                  style: const TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black),
-                ),
-                subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : ListView.builder(
+              itemCount: postData?.length,
+              itemBuilder: (BuildContext context, index) {
+                return Card(
+                  color: Colors.yellow,
+                  child: ListTile(
+                    title: Text(
+                      "${postData?[index].title}",
+                      style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black),
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Id:${postData?[index].id}"),
-                        Text("UserId:${postData?[index].userId}")
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Id:${postData?[index].id}"),
+                            Text("UserId:${postData?[index].userId}")
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          "Body:${postData?[index].body}",
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                              color: Colors.black.withOpacity(0.7)),
+                        )
                       ],
                     ),
-                    const SizedBox(height: 4),
-                    Text(
-                      "Body:${postData?[index].body}",
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          color: Colors.black.withOpacity(0.7)),
-                    )
-                  ],
-                ),
-              ),
-            );
-          }),
+                  ),
+                );
+              }),
     );
   }
 }

@@ -20,8 +20,8 @@ class _UploadImagePageState extends State<UploadImagePage> {
   final ImagePicker _picker = ImagePicker();
   double _uploadProgress = 0.0;
 
-  Future<void> pickImage() async {
-    final pickImage = await _picker.pickImage(source: ImageSource.gallery);
+  Future<void> pickImage(ImageSource source) async {
+    final pickImage = await _picker.pickImage(source: source);
     if (pickImage != null) {
       setState(() {
         _image = File(pickImage.path);
@@ -57,7 +57,7 @@ class _UploadImagePageState extends State<UploadImagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Upload Images"),
+        title: const Text("Upload Images"),
       ),
       body: Center(
         child: Column(
@@ -66,11 +66,25 @@ class _UploadImagePageState extends State<UploadImagePage> {
             _image != null
                 ? Image.file(_image!, height: 200)
                 : const Text("No Image Selected"),
-            ElevatedButton(
-                onPressed: () {
-                  pickImage();
-                },
-                child: const Text("Pick Image")),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    pickImage(ImageSource.gallery);
+                  },
+                  child: const Text("Gallery"),
+                ),
+                const SizedBox(width: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    pickImage(ImageSource.camera);
+                  },
+                  child: const Text("Camera"),
+                ),
+              ],
+            ),
             const SizedBox(height: 30),
             ElevatedButton(
                 onPressed: () {
@@ -87,7 +101,7 @@ class _UploadImagePageState extends State<UploadImagePage> {
                 onPressed: () {
                   Get.to(() => const DisplayImagePage());
                 },
-                child: Text("View Images"))
+                child: const Text("View Images"))
           ],
         ),
       ),

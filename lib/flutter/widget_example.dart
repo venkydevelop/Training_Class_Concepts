@@ -12,7 +12,14 @@ class WidgetsExample extends StatelessWidget {
         backgroundColor: Colors.green,
         foregroundColor: Colors.red,
         leading: const Icon(Icons.add),
-        actions: const [Icon(Icons.circle_notifications)],
+        actions:  [
+          const Icon(Icons.circle_notifications),
+          IconButton(
+          icon: const Icon(Icons.search),
+          onPressed: () {
+           },
+          )
+        ],
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(12),
