@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:training_session/flutter/navigation_example.dart';
+import 'package:training_session/api/sign_in_api.dart';
 
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
           useMaterial3: true,
           fontFamily: "WorkSans"),
-      home: const NavigationExample(),
+      home: const SignInApi(),
     );
   }
 }

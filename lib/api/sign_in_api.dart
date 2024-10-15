@@ -16,6 +16,7 @@ class _SignInApiState extends State<SignInApi> {
 
   bool isPasswordVisible = false;
   bool isLoading = false;
+  String message = "";
 
   void togglePassword() {
     setState(() {
@@ -75,7 +76,16 @@ class _SignInApiState extends State<SignInApi> {
             const SizedBox(height: 20),
             if (isLoading)
               const Center(
-                  child: CircularProgressIndicator(color: Colors.lightBlue))
+                  child: CircularProgressIndicator(color: Colors.lightBlue)),
+            const SizedBox(height: 20),
+            if (message.isNotEmpty) // Display the message (token or error)
+              Center(
+                child: Text(
+                  message,
+                  style: const TextStyle(color: Colors.red, fontSize: 16),
+                  textAlign: TextAlign.center,
+                ),
+              ),
           ],
         ),
       ),
@@ -86,6 +96,7 @@ class _SignInApiState extends State<SignInApi> {
     const uri = "https://reqres.in/api/login";
     setState(() {
       isLoading = true;
+      message = "";
     });
     try {
       final response = await http.post(Uri.parse(uri),
@@ -100,14 +111,21 @@ class _SignInApiState extends State<SignInApi> {
         });
         final jsonData = jsonDecode(response.body);
         final token = jsonData["token"];
+        setState(() {
+          message = "Token: $token";
+        });
         print(token);
       } else {
-        throw Exception("Token not found");
+        setState(() {
+          isLoading = false;
+          message = "Token not found in response.";
+        });
       }
     } catch (e) {
       print(e);
       setState(() {
         isLoading = false;
+        message = "Error: ${e.toString()}"; // Display the error message
       });
     }
   }

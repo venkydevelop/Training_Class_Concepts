@@ -13,43 +13,46 @@ class DrawerExample extends StatelessWidget {
         title: const Text("Drawer Example"),
       ),
       drawer: Drawer(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.white,
         child: ListView(
           padding: const EdgeInsets.all(0),
           children: [
             const DrawerHeader(
                 decoration: BoxDecoration(color: Colors.green),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.yellow,
-                      child: Text(
-                        "V",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                            color: Colors.blue),
+                curve: Curves.bounceOut,
+                child: Center(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundColor: Colors.yellow,
+                        child: Text(
+                          "V",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 20,
+                              color: Colors.blue),
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text("Venkatesh",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black)),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text("venky@gmail.com",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.black)),
-                  ],
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("Venkatesh",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black)),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text("venky@gmail.com",
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black)),
+                    ],
+                  ),
                 )),
             ListTile(
               leading: const Icon(Icons.home_outlined),
@@ -126,7 +129,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: const Text("Home Page"),
       ),
       body: Container(
         width: double.infinity,
@@ -135,7 +138,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "Home Page",
               style: TextStyle(
                   fontSize: 22,
@@ -161,7 +164,7 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profile Page"),
+        title: const Text("Profile Page"),
       ),
       body: Container(
         width: double.infinity,
@@ -191,12 +194,12 @@ class SettingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Setting Page"),
+        title: const Text("Setting Page"),
       ),
       body: Container(
         width: double.infinity,
         color: Colors.green,
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
